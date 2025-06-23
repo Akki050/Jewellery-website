@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Signup - Jewellery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h2>Signup</h2>
+  <form id="signupForm">
+    <label>Username:</label><br>
+    <input type="text" id="username" required /><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" required /><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password" required /><br><br>
+
+    <button type="submit">Signup</button>
+  </form>
+
+  <p id="signupMessage"></p>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", async (e) => {
+      e.preventDefault(); // ⬅ prevents page reload
+
+      const username = document.getElementById("username").value;
+      const email    = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("http://localhost:5000/signup", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, email, password })
+        });
+
+        const data = await res.json();
+        document.getElementById("signupMessage").textContent = data.message;
+      } catch (err) {
+        document.getElementById("signupMessage").textContent = "Signup failed. Check console.";
+        console.error(err);
+      }
+    });
+  </script>
+
+</body>
+</html>

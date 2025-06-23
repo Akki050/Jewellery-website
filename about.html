@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - GoldAura</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #fffaf0, #f0e6d2); /* soft golden glow */
+            color: #333;
+        }
+
+        header {
+            background: #fff;
+            padding: 15px 30px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: goldenrod;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #b89d00;
+        }
+
+        .about {
+            text-align: center;
+            padding: 60px 20px 20px;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .info-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 30px 20px;
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            color: goldenrod;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        footer {
+            background: #fff;
+            padding: 15px;
+            text-align: center;
+            color: #888;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .info-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>GoldAura</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#">Login</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>GoldAura is a trusted brand offering high-quality, handcrafted jewellery to make every moment special.</p>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="info-cards">
+        <div class="card">
+            <h3>Our Mission</h3>
+            <p>To craft timeless jewellery that brings joy and elegance to every customer.</p>
+        </div>
+        <div class="card">
+            <h3>Our Vision</h3>
+            <p>To be the leading jewellery brand known for beauty, trust, and innovation.</p>
+        </div>
+        <div class="card">
+            <h3>Our Values</h3>
+            <p>Quality, Honesty, and Customer Satisfaction are at the heart of everything we do.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GoldAura. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

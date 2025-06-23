@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Account - GoldAura</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="account.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>GoldAura</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="account.html">My Account</a>
+      <a href="login.html" onclick="logout()">Logout</a>
+    </nav>
+  </header>
+
+  <!-- My Account Section -->
+  <section class="account-container">
+    <h2>Welcome, <span id="userName">User</span> 👋</h2>
+
+    <div class="account-grid">
+      <!-- Editable Profile -->
+      <div class="card">
+        <h3>Profile Info</h3>
+        <label>Name: <input type="text" id="name" value="Akshitha Reddy"></label><br>
+        <label>Email: <input type="email" id="email" value="akshi@gmail.com"></label><br>
+        <label>Phone: <input type="tel" id="phone" value="9876543210"></label><br>
+        <label>Address: <input type="text" id="address" value="Hyderabad, India"></label><br>
+        <button onclick="saveProfile()">Save</button>
+      </div>
+
+      <!-- Orders -->
+      <div class="card">
+        <h3>Products Ordered</h3>
+        <ul>
+          <li>Gold Necklace - ₹25,000</li>
+          <li>Diamond Ring - ₹18,000</li>
+        </ul>
+      </div>
+
+      <!-- Achievements -->
+      <div class="card">
+        <h3>Achievements</h3>
+        <ul>
+          <li>🎖️ 5 Orders Completed</li>
+          <li>💎 Gold Tier Customer</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="card">
+        <h3>Contact Info</h3>
+        <p>Email: support@goldaura.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GoldAura. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

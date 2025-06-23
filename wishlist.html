@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Wishlist - GoldAura</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fffef6;
+    }
+
+    header {
+      background: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      color: goldenrod;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: goldenrod;
+    }
+
+    .wishlist-section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .wishlist-section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .wishlist-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .wishlist-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .wishlist-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .wishlist-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .wishlist-card h3 {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    .wishlist-card p.price {
+      color: #777;
+      margin-bottom: 12px;
+    }
+
+    .remove-btn {
+      padding: 8px 16px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .remove-btn:hover {
+      background-color: darkred;
+    }
+
+    footer {
+      margin-top: 50px;
+      background: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>GoldAura</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <!-- Wishlist Section -->
+  <section class="wishlist-section">
+    <h2>My Wishlist ❤️</h2>
+    <div class="wishlist-list" id="wishlistItems">
+      <!-- Sample Wishlist Item -->
+      <div class="wishlist-card">
+        <img src="https://i.imgur.com/Y1W6A4V.jpg" alt="Diamond Ring">
+        <h3>Diamond Ring</h3>
+        <p class="price">₹18,000</p>
+        <button class="remove-btn" onclick="removeItem(this)">🗑️ Remove</button>
+      </div>
+
+      <div class="wishlist-card">
+        <img src="https://i.imgur.com/1bX5QH6.jpg" alt="Gold Necklace">
+        <h3>Gold Necklace</h3>
+        <p class="price">₹25,000</p>
+        <button class="remove-btn" onclick="removeItem(this)">🗑️ Remove</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GoldAura. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function removeItem(btn) {
+      const card = btn.closest('.wishlist-card');
+      card.remove();
+    }
+  </script>
+
+</body>
+</html>

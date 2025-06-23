@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GoldAura Jewellery</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+
+  <style>
+    .hero {
+      background-image: url('images/imageeee.webp'); /* Replace this with your actual image path */
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+      z-index: 1;
+    }
+
+    .hero h2,
+    .hero p,
+    .hero a {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>GoldAura</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="signup.html">Signup</a>
+      <a href="login.html">Login</a>
+      <a href="myaccount.html">My Account</a>
+      <a href="cart.html" class="icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" class="badge" value="0">0</span>
+      </a>
+      <a href="wishlist.html" class="icon">
+        <i class="fas fa-heart"></i>
+        <span id="wishCount" class="badge" value="0">0</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Shine with Elegance ✨</h2>
+    <p>Discover the finest jewellery crafted with love and tradition.</p>
+    <a href="products.html" class="btn shop-now-btn">Shop Now</a>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="products">
+    <h2 style="text-align: center;">Featured Products</h2>
+    <div class="product-list">
+
+      <div class="product-card">
+        <img src="images/diamond-ring.jpg" alt="Diamond Ring">
+        <h3>Diamond Ring</h3>
+        <p class="price">&#8377;25,000</p>
+        <button class="btn cart-btn" 
+                data-name="Diamond Ring" 
+                data-price="200000" 
+                data-image="images/diamond-ring.jpg">🛒 Add to Cart</button>
+        <button class="btn wishlist-btn">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/bangles.jpeg" alt="Golden Bangles">
+        <h3>Golden Bangles</h3>
+        <p class="price">&#8377;108,000</p>
+        <button class="btn cart-btn" 
+                data-name="Golden Bangles" 
+                data-price="18000" 
+                data-image="images/bangles.jpeg">🛒 Add to Cart</button>
+        <button class="btn wishlist-btn">❤️ Wishlist</button>
+      </div>
+
+      <div class="product-card">
+        <img src="images/Chocker_necklace.jpg" alt="Chocker Necklace">
+        <h3>Chocker Necklace</h3>
+        <p class="price">&#8377;70,500</p>
+        <button class="btn cart-btn" 
+                data-name="Chocker Necklace" 
+                data-price="7500" 
+                data-image="images/Chocker_necklace.jpg">🛒 Add to Cart</button>
+        <button class="btn wishlist-btn">❤️ Wishlist</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="about-preview">
+    <h2>Why Choose GoldAura?</h2>
+    <p>We craft each piece with passion, precision, and a promise of purity. Join thousands who trust us for life’s most precious moments.</p>
+    <a href="about.html" class="btn">Learn More</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Akshitha Vogue. All rights reserved.</p>
+  </footer>
+
+  <!-- JS: Handle Cart and Wishlist Count -->
+  <script>
+    const cartCountEl = document.getElementById('cartCount');
+    const wishCountEl = document.getElementById('wishCount');
+
+    let cartCount = 0;
+    let wishCount = 0;
+
+    document.querySelectorAll('.cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        cartCount++;
+        cartCountEl.textContent = cartCount;
+
+        const item = {
+          name: button.getAttribute('data-name'),
+          price: button.getAttribute('data-price'),
+          image: button.getAttribute('data-image')
+        };
+
+        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        cartItems.push(item);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+      });
+    });
+
+    document.querySelectorAll('.wishlist-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        wishCount++;
+        wishCountEl.textContent = wishCount;
+      });
+    });
+  </script>
+
+</body>
+</html>

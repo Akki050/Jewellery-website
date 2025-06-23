@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Dashboard - GoldAura</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.1/css/all.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff8e7, #fceabb);
+      color: #333;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header h1 {
+      color: goldenrod;
+      font-size: 1.8rem;
+    }
+
+    .dashboard {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .dashboard h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: goldenrod;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h3 {
+      font-size: 1.4rem;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      background: #f9f9f9;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      border-left: 4px solid goldenrod;
+    }
+
+    .logout-btn {
+      display: block;
+      width: 150px;
+      margin: 20px auto 0;
+      padding: 12px;
+      background-color: #f44336;
+      color: white;
+      text-align: center;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .logout-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    @media (max-width: 600px) {
+      .dashboard {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .logout-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GoldAura</h1>
+    <span><i class="fas fa-user"></i> Welcome, Akshitha!</span>
+  </header>
+
+  <div class="dashboard">
+    <h2>Welcome to your Dashboard 🎉</h2>
+
+    <!-- Orders Section -->
+    <div class="section">
+      <h3>🛍️ Products Ordered</h3>
+      <ul>
+        <li>Diamond Ring - ₹25,000 - Ordered on 20 June 2025</li>
+        <li>Gold Necklace - ₹40,000 - Ordered on 10 May 2025</li>
+      </ul>
+    </div>
+
+    <!-- Achievements Section -->
+    <div class="section">
+      <h3>🏆 Achievements</h3>
+      <ul>
+        <li>Loyal Customer Badge 🥇</li>
+        <li>First Purchase Discount Claimed 💸</li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="section">
+      <h3>📇 Contact Info</h3>
+      <ul>
+        <li><strong>Email:</strong> akshitha@example.com</li>
+        <li><strong>Phone:</strong> +91-9876543210</li>
+        <li><strong>Address:</strong> Hyderabad, Telangana, India</li>
+      </ul>
+    </div>
+
+    <!-- Logout Button -->
+    <button class="logout-btn">Logout</button>
+  </div>
+
+</body>
+</html>

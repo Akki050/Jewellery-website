@@ -5,21 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - Jewellery</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      background-color: #fffef6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: goldenrod;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: goldenrod;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c4962b;
+    }
+
+    #loginMessage {
+      margin-top: 15px;
+      color: crimson;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-  <h2>Login</h2>
-  <form id="loginForm">
-    <label>Email:</label><br>
-    <input type="email" id="email" required /><br>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label>Email:</label>
+      <input type="email" id="email" required />
 
-    <label>Password:</label><br>
-    <input type="password" id="password" required /><br><br>
+      <label>Password:</label>
+      <input type="password" id="password" required />
 
-    <button type="submit">Login</button>
-  </form>
+      <button type="submit">Login</button>
+    </form>
 
-  <p id="loginMessage"></p>
+    <p id="loginMessage"></p>
+  </div>
 
   <script>
     document.getElementById("loginForm").addEventListener("submit", async (e) => {

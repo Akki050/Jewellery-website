@@ -224,4 +224,8 @@ For questions or support, please contact the development team.
 
 ---
 
+<<<<<<< HEAD
 **GoldAura** - Shine with Elegance ✨ 
+=======
+**GoldAura** - Shine with Elegance ✨ 
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49

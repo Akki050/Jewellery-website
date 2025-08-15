@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Signup - GoldAura</title>
   <link rel="stylesheet" href="style.css" />
+<<<<<<< HEAD
   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
   <style>
     body {
@@ -64,12 +65,70 @@
     #signupMessage {
       margin-top: 15px;
       color: crimson;
+=======
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f8f8f8;
+    }
+
+    form {
+      background-color: white;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #d4af37;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #b7962e;
+    }
+
+    #signupMessage {
+      text-align: center;
+      margin-top: 15px;
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
       font-weight: bold;
     }
   </style>
 </head>
 <body>
 
+<<<<<<< HEAD
   <!-- Header -->
   <header>
     <h1>GoldAura</h1>
@@ -106,6 +165,23 @@
       </form>
     </div>
   </div>
+=======
+  <form id="signupForm">
+    <h2>Signup</h2>
+    <label>Username:</label><br>
+    <input type="text" id="username" required /><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" required /><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password" required /><br>
+
+    <button type="submit">Signup</button>
+    <p id="signupMessage"></p>
+  </form>
+
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
   <script>
     document.getElementById("signupForm").addEventListener("submit", async (e) => {
       e.preventDefault();

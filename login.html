@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login - GoldAura</title>
   <link rel="stylesheet" href="style.css" />
+<<<<<<< HEAD
   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
   <style>
     body {
@@ -34,12 +35,47 @@
       margin-bottom: 18px;
     }
     .login-card label {
+=======
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      background-color: #fffef6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: goldenrod;
+    }
+
+    label {
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
       display: block;
       text-align: left;
       margin-bottom: 5px;
       font-weight: bold;
     }
+<<<<<<< HEAD
     .login-card input {
+=======
+
+    input {
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -47,7 +83,12 @@
       border-radius: 5px;
       box-sizing: border-box;
     }
+<<<<<<< HEAD
     .login-card button {
+=======
+
+    button {
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
       width: 100%;
       padding: 10px;
       background-color: goldenrod;
@@ -58,9 +99,17 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+<<<<<<< HEAD
     .login-card button:hover {
       background-color: #c4962b;
     }
+=======
+
+    button:hover {
+      background-color: #c4962b;
+    }
+
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
     #loginMessage {
       margin-top: 15px;
       color: crimson;
@@ -69,6 +118,7 @@
   </style>
 </head>
 <body>
+<<<<<<< HEAD
   <!-- Header -->
   <header>
     <h1>GoldAura</h1>
@@ -103,6 +153,24 @@
       <p id="loginMessage"></p>
     </div>
   </div>
+=======
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label>Email:</label>
+      <input type="email" id="email" required />
+
+      <label>Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p id="loginMessage"></p>
+  </div>
+
+>>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
   <script>
     document.getElementById("loginForm").addEventListener("submit", async (e) => {
       e.preventDefault();

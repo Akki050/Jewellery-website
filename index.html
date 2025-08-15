@@ -6,7 +6,6 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
   <style>
-    /* Only keep minimal centering or background for .hero if needed */
     .hero {
       background-image: url('images/imageeee.webp');
       background-size: cover;
@@ -42,14 +41,9 @@
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-<<<<<<< HEAD
-      <a href="auth.html">Sign In</a>
-      <a href="account.html">My Account</a>
-=======
       <a href="signup.html">Signup</a>
       <a href="login.html">Login</a>
-      <a href="account.html">My Account</a> <!-- ✅ Fixed link -->
->>>>>>> 7b742a9290e97a4896056d8fe687f362733d2f49
+      <a href="account.html">My Account</a>
       <a href="cart.html" class="icon">
         <i class="fas fa-shopping-cart"></i>
         <span id="cartCount" class="badge" value="0">0</span>
@@ -126,7 +120,7 @@
   <section class="cta-section">
     <h2>Ready to Shine?</h2>
     <p>Join GoldAura for exclusive offers and the latest in elegant jewellery.</p>
-            <a href="auth.html" class="btn cta-btn">Sign Up Now</a>
+    <a href="auth.html" class="btn cta-btn">Sign Up Now</a>
   </section>
 
   <!-- Modern Footer -->
@@ -157,17 +151,14 @@
     const cartCountEl = document.getElementById('cartCount');
     const wishCountEl = document.getElementById('wishCount');
 
-    // Load existing counts from localStorage
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
-    
-    // Function to update display counts
+
     function updateCounts() {
       cartCountEl.textContent = cartItems.length;
       wishCountEl.textContent = wishlistItems.length;
     }
     
-    // Update display counts on page load
     updateCounts();
 
     document.querySelectorAll('.cart-btn').forEach(button => {
@@ -177,14 +168,9 @@
           price: button.getAttribute('data-price'),
           image: button.getAttribute('data-image')
         };
-
         cartItems.push(item);
         localStorage.setItem('cart', JSON.stringify(cartItems));
-        
-        // Update display
         updateCounts();
-        
-        // Show feedback
         button.textContent = '✓ Added!';
         button.style.background = '#28a745';
         setTimeout(() => {
@@ -196,26 +182,14 @@
 
     document.querySelectorAll('.wishlist-btn').forEach(button => {
       button.addEventListener('click', () => {
-        // Get product details from the card
         const card = button.closest('.product-card');
         const name = card.querySelector('h3').textContent;
         const price = card.querySelector('.price').textContent.replace('₹', '');
-        const image = card.querySelector('img').src.split('/').pop(); // Get filename
-        
-        // Create item object
-        const item = {
-          name: name,
-          price: price,
-          image: `images/${image}`
-        };
-        
+        const image = card.querySelector('img').src.split('/').pop();
+        const item = { name, price, image: `images/${image}` };
         wishlistItems.push(item);
         localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
-        
-        // Update display
         updateCounts();
-        
-        // Show feedback
         button.textContent = '❤️ Added!';
         button.style.background = '#dc3545';
         setTimeout(() => {

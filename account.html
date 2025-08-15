@@ -2,9 +2,227 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Account - GoldAura</title>
   <link rel="stylesheet" href="style.css">
-  <script defer src="account.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <style>
+    .account-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .account-container h2 {
+      text-align: center;
+      color: var(--gold-accent);
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      font-weight: 700;
+    }
+
+    .account-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      border-color: var(--gold-accent);
+    }
+
+    .card h3 {
+      color: var(--gold-accent);
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card h3 i {
+      font-size: 1.2rem;
+    }
+
+    .profile-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .form-group input {
+      padding: 12px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--gold-accent);
+    }
+
+    .save-btn {
+      background: var(--gold-accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .save-btn:hover {
+      background: #a67c00;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .info-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .info-list li:last-child {
+      border-bottom: none;
+    }
+
+    .info-list strong {
+      color: #333;
+      font-weight: 600;
+    }
+
+    .info-list small {
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .achievement-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .achievement-list li {
+      padding: 15px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    .achievement-list li:last-child {
+      border-bottom: none;
+    }
+
+    .order-item {
+      background: #f8f9fa;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .order-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .order-title {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .order-date {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .action-btn {
+      background: linear-gradient(135deg, var(--gold-accent), #a67c00);
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(191, 155, 48, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .account-container {
+        padding: 0 15px;
+        margin: 20px auto;
+      }
+
+      .account-container h2 {
+        font-size: 2rem;
+      }
+
+      .account-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .quick-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,58 +234,175 @@
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="auth.html">Sign In</a>
       <a href="account.html">My Account</a>
-      <a href="login.html" onclick="logout()">Logout</a>
+      <a href="cart.html" class="icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" class="badge" value="0">0</span>
+      </a>
+      <a href="wishlist.html" class="icon">
+        <i class="fas fa-heart"></i>
+        <span id="wishCount" class="badge" value="0">0</span>
+      </a>
     </nav>
   </header>
 
   <!-- My Account Section -->
   <section class="account-container">
-    <h2>Welcome, <span id="userName">User</span> 👋</h2>
+    <h2>Welcome, <span id="userName">Akshitha Reddy</span> 👋</h2>
 
     <div class="account-grid">
       <!-- Editable Profile -->
       <div class="card">
-        <h3>Profile Info</h3>
-        <label>Name: <input type="text" id="name" value="Akshitha Reddy"></label><br>
-        <label>Email: <input type="email" id="email" value="akshi@gmail.com"></label><br>
-        <label>Phone: <input type="tel" id="phone" value="9876543210"></label><br>
-        <label>Address: <input type="text" id="address" value="Hyderabad, India"></label><br>
-        <button onclick="saveProfile()">Save</button>
+        <h3><i class="fas fa-user"></i> Profile Info</h3>
+        <form class="profile-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" value="Akshitha Reddy">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" value="akshi@gmail.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" value="8341785897">
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" value="Hyderabad, India">
+          </div>
+          <button type="button" class="save-btn" onclick="saveProfile()">
+            <i class="fas fa-save"></i> Save Changes
+          </button>
+        </form>
       </div>
 
-      <!-- Orders -->
+      <!-- Shipping Details -->
       <div class="card">
-        <h3>Products Ordered</h3>
-        <ul>
-          <li>Gold Necklace - ₹25,000</li>
-          <li>Diamond Ring - ₹18,000</li>
+        <h3><i class="fas fa-shipping-fast"></i> Shipping Details</h3>
+        <ul class="info-list">
+          <li><strong>Address:</strong> 123, Lotus Residency, Banjara Hills</li>
+          <li><strong>City:</strong> Hyderabad</li>
+          <li><strong>State:</strong> Telangana</li>
+          <li><strong>ZIP:</strong> 500034</li>
         </ul>
+      </div>
+
+      <!-- Recent Orders -->
+      <div class="card">
+        <h3><i class="fas fa-box"></i> Recent Orders</h3>
+        <div class="order-item">
+          <div class="order-title">Diamond Ring - ₹25,000</div>
+          <div class="order-date">Delivered: 20 June 2025</div>
+        </div>
+        <div class="order-item">
+          <div class="order-title">Gold Necklace - ₹40,000</div>
+          <div class="order-date">Delivered: 10 May 2025</div>
+        </div>
       </div>
 
       <!-- Achievements -->
       <div class="card">
-        <h3>Achievements</h3>
-        <ul>
-          <li>🎖️ 5 Orders Completed</li>
+        <h3><i class="fas fa-trophy"></i> Achievements</h3>
+        <ul class="achievement-list">
+          <li>🏆 5 Orders Completed</li>
           <li>💎 Gold Tier Customer</li>
+          <li>⭐ Loyalty Points: 2,450</li>
+          <li>🎁 Birthday Reward Available</li>
         </ul>
       </div>
 
-      <!-- Contact -->
+      <!-- Contact Support -->
       <div class="card">
-        <h3>Contact Info</h3>
-        <p>Email: support@goldaura.com</p>
-        <p>Phone: +91 98765 43210</p>
+        <h3><i class="fas fa-headset"></i> Contact Support</h3>
+        <ul class="info-list">
+          <li><strong>Email:</strong> support@goldaura.com</li>
+          <li><strong>Phone:</strong> +91 8341785897</li>
+          <li><strong>Hours:</strong> 9 AM - 8 PM</li>
+        </ul>
       </div>
     </div>
 
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+      <a href="products.html" class="action-btn">
+        <i class="fas fa-shopping-bag"></i>
+        Continue Shopping
+      </a>
+      <a href="wishlist.html" class="action-btn">
+        <i class="fas fa-heart"></i>
+        View Wishlist
+      </a>
+      <a href="cart.html" class="action-btn">
+        <i class="fas fa-shopping-cart"></i>
+        View Cart
+      </a>
+      <a href="contact.html" class="action-btn">
+        <i class="fas fa-envelope"></i>
+        Contact Support
+      </a>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 GoldAura. All rights reserved.</p>
+  <footer class="modern-footer">
+    <div class="footer-brand">
+      <h3>GoldAura</h3>
+      <p>Elegance. Tradition. You.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="auth.html">Sign In</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2025 GoldAura. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script>
+    function saveProfile() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      
+      // Update the welcome message
+      document.getElementById('userName').textContent = name;
+      
+      // Show success message
+      alert('Profile updated successfully!');
+    }
+
+    function logout() {
+      if (confirm('Are you sure you want to logout?')) {
+        window.location.href = 'auth.html';
+      }
+    }
+
+    // Add logout button functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add logout button to the quick actions
+      const quickActions = document.querySelector('.quick-actions');
+      const logoutBtn = document.createElement('a');
+      logoutBtn.href = '#';
+      logoutBtn.className = 'action-btn';
+      logoutBtn.innerHTML = '<i class="fas fa-sign-out-alt"></i> Logout';
+      logoutBtn.onclick = function(e) {
+        e.preventDefault();
+        logout();
+      };
+      quickActions.appendChild(logoutBtn);
+    });
+  </script>
 
 </body>
 </html>

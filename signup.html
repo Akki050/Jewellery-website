@@ -3,30 +3,112 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Signup - Jewellery</title>
+  <title>Signup - GoldAura</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      background: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+    }
+    .center-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .signup-card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      width: 100%;
+      max-width: 370px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .signup-card h2 {
+      color: goldenrod;
+      margin-bottom: 18px;
+    }
+    .signup-card label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .signup-card input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .signup-card button {
+      width: 100%;
+      padding: 10px;
+      background-color: goldenrod;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .signup-card button:hover {
+      background-color: #c4962b;
+    }
+    #signupMessage {
+      margin-top: 15px;
+      color: crimson;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-  <h2>Signup</h2>
-  <form id="signupForm">
-    <label>Username:</label><br>
-    <input type="text" id="username" required /><br>
-
-    <label>Email:</label><br>
-    <input type="email" id="email" required /><br>
-
-    <label>Password:</label><br>
-    <input type="password" id="password" required /><br><br>
-
-    <button type="submit">Signup</button>
-  </form>
-
-  <p id="signupMessage"></p>
-
+  <!-- Header -->
+  <header>
+    <h1>GoldAura</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="signup.html">Signup</a>
+      <a href="login.html">Login</a>
+      <a href="account.html">My Account</a>
+      <a href="cart.html" class="icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" class="badge" value="0">0</span>
+      </a>
+      <a href="wishlist.html" class="icon">
+        <i class="fas fa-heart"></i>
+        <span id="wishCount" class="badge" value="0">0</span>
+      </a>
+    </nav>
+  </header>
+  <div class="center-container">
+    <div class="signup-card">
+      <h2>Signup</h2>
+      <form id="signupForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+        <button type="submit">Signup</button>
+        <p id="signupMessage"></p>
+      </form>
+    </div>
+  </div>
   <script>
     document.getElementById("signupForm").addEventListener("submit", async (e) => {
-      e.preventDefault(); // ⬅ prevents page reload
+      e.preventDefault();
 
       const username = document.getElementById("username").value;
       const email    = document.getElementById("email").value;

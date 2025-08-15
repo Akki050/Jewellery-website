@@ -3,24 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - Jewellery</title>
+  <title>Login - GoldAura</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+  <style>
+    body {
+      min-height: 100vh;
+      background: #fffef6;
+      display: flex;
+      flex-direction: column;
+    }
+    .center-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+      width: 100%;
+      max-width: 370px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .login-card h2 {
+      color: goldenrod;
+      margin-bottom: 18px;
+    }
+    .login-card label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .login-card input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .login-card button {
+      width: 100%;
+      padding: 10px;
+      background-color: goldenrod;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .login-card button:hover {
+      background-color: #c4962b;
+    }
+    #loginMessage {
+      margin-top: 15px;
+      color: crimson;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-
-  <h2>Login</h2>
-  <form id="loginForm">
-    <label>Email:</label><br>
-    <input type="email" id="email" required /><br>
-
-    <label>Password:</label><br>
-    <input type="password" id="password" required /><br><br>
-
-    <button type="submit">Login</button>
-  </form>
-
-  <p id="loginMessage"></p>
-
+  <!-- Header -->
+  <header>
+    <h1>GoldAura</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="signup.html">Signup</a>
+      <a href="login.html">Login</a>
+      <a href="account.html">My Account</a>
+      <a href="cart.html" class="icon">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cartCount" class="badge" value="0">0</span>
+      </a>
+      <a href="wishlist.html" class="icon">
+        <i class="fas fa-heart"></i>
+        <span id="wishCount" class="badge" value="0">0</span>
+      </a>
+    </nav>
+  </header>
+  <div class="center-container">
+    <div class="login-card">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" required />
+        <button type="submit">Login</button>
+      </form>
+      <p id="loginMessage"></p>
+    </div>
+  </div>
   <script>
     document.getElementById("loginForm").addEventListener("submit", async (e) => {
       e.preventDefault();

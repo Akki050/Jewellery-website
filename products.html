@@ -4,231 +4,281 @@
   <meta charset="UTF-8">
   <title>Our Products - GoldAura</title>
   
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
-  
-  <!-- Font Awesome Icons -->
   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
-
-  <!-- Internal style override for aesthetic background -->
+  
   <style>
+    /* Only keep minimal centering for .products if needed */
     body {
-      background: linear-gradient(to right, #f5f7fa, #c3cfe2); /* soft bluish gradient */
-    }
-
-    .products h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .product-card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    footer {
-      background: #fff;
-    }
-
-    header {
-      background-color: #fff;
+      background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <h1 style="color: goldenrod;">GoldAura</h1>
+    <h1>GoldAura</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="signup.html">Signup</a>
-      <a href="login.html">Login</a>
+      <a href="auth.html">Sign In</a>
+      <a href="account.html">My Account</a>
       <a href="cart.html" class="icon">
         <i class="fas fa-shopping-cart"></i>
-        <span id="cartCount" class="badge" value="0"></span>
+        <span id="cartCount" class="badge">0</span>
       </a>
       <a href="wishlist.html" class="icon">
         <i class="fas fa-heart"></i>
-        <span id="wishCount" class="badge" value="0"></span>
+        <span id="wishCount" class="badge">0</span>
       </a>
     </nav>
   </header>
 
-  <!-- Products Section -->
   <section class="products">
     <h2>Our Products</h2>
     <div class="product-list">
       
-      <!-- Product 1 -->
-      
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\pearl Earrings.jpeg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/pearl Earrings.jpeg" alt="Pearl Earrings">
         <h3>Pearl Earrings</h3>
         <p class="price">₹7,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-      <!-- Product 2 -->
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Chocker_necklace.jpg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/Chocker_necklace.jpg" alt="Chocker Necklace">
         <h3>Chocker Necklace</h3>
         <p class="price">₹70,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\diamond-ring.jpg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/diamond-ring.jpg" alt="Diamond Ring">
         <h3>Diamond Ring</h3>
         <p class="price">₹10,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-       <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Engagment_Rings.jpg" alt="Silver Bangles">
-        <h3>Engagment Rings</h3>
+      <div class="product-card">
+        <img src="images/Engagment_Rings.jpg" alt="Engagement Rings">
+        <h3>Engagement Rings</h3>
         <p class="price">₹5,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\EarRings_Gold-plated.jpg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/EarRings_Gold-plated.jpg" alt="Earrings Gold">
         <h3>Earrings Gold</h3>
         <p class="price">₹2,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-       <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\jewellery set-Indian Designs.jpg" alt="Silver Bangles">
-        <h3>jewellery set-Indian Designs</h3>
+      <div class="product-card">
+        <img src="images/jewellery set-Indian Designs.jpg" alt="Jewellery Set Indian">
+        <h3>Jewellery Set - Indian Designs</h3>
         <p class="price">₹100,000</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\simple_chains.jpg" alt="Silver Bangles">
-        <h3>Jewellery set</h3>
+      <div class="product-card">
+        <img src="images/simple_chains.jpg" alt="Simple Chains">
+        <h3>Jewellery Set</h3>
         <p class="price">₹999</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-       <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Rose-Gold_Finish_Chocker.jpg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/Rose-Gold_Finish_Chocker.jpg" alt="Rose Gold Chocker">
         <h3>Rose Gold Finish Chocker</h3>
         <p class="price">₹7,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Personalised_Gold_Couple_Rings.jpg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/Personalised_Gold_Couple_Rings.jpg" alt="Couple Rings">
         <h3>Personalised Gold Couple Rings</h3>
         <p class="price">₹1,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-       <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Gold_Ring.jpg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/Gold_Ring.jpg" alt="Gold Ring">
         <h3>Gold Ring</h3>
         <p class="price">₹1,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Earrings.......jpeg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/Earrings.......jpeg" alt="White Stone Earrings">
         <h3>EarRings White Stones</h3>
         <p class="price">₹500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-       <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Anklets.jpeg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/Anklets.jpeg" alt="Anklets">
         <h3>Anklets</h3>
-        <p class="price">₹1500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <p class="price">₹1,500</p>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\earRings.webp" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/earRings.webp" alt="EarRings">
         <h3>EarRings</h3>
         <p class="price">₹3,500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-       <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\stones.jpeg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/stones.jpeg" alt="Stones">
         <h3>Stones</h3>
         <p class="price">₹300</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-
-      <div class="product-card" data-id="2" data-name="Silver Bangles" data-price="7500">
-        <img src="images\Anklets....jpeg" alt="Silver Bangles">
+      <div class="product-card">
+        <img src="images/Anklets....jpeg" alt="Anklets 2">
         <h3>Anklets</h3>
         <p class="price">₹500</p>
-        <button class="btn cart-btn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
-        <button class="btn wishlist-btn"><i class="fas fa-heart"></i> Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
-       
-
-
-      <!-- Add more products here if needed -->
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 GoldAura. All rights reserved.</p>
   </footer>
 
-  <!-- JavaScript for Cart/Wishlist Counter -->
   <script>
+    // Handle cart/wishlist counters with localStorage
     const cartCountEl = document.getElementById('cartCount');
     const wishCountEl = document.getElementById('wishCount');
-    let cartCount = 0;
-    let wishCount = 0;
+    
+    // Load existing counts from localStorage
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+    
+    // Function to update display counts
+    function updateCounts() {
+      cartCountEl.textContent = cartItems.length;
+      wishCountEl.textContent = wishlistItems.length;
+    }
+    
+    // Update display counts
+    updateCounts();
 
     document.querySelectorAll('.cart-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        cartCount++;
-        cartCountEl.setAttribute('value', cartCount);
-        cartCountEl.textContent = cartCount;
+      btn.addEventListener('click', () => {
+        // Get product details from the card
+        const card = btn.closest('.product-card');
+        const name = card.querySelector('h3').textContent;
+        const price = card.querySelector('.price').textContent.replace('₹', '');
+        const image = card.querySelector('img').src.split('/').pop(); // Get filename
+        
+        // Create item object
+        const item = {
+          name: name,
+          price: price,
+          image: `images/${image}`
+        };
+        
+        // Add to cart
+        cartItems.push(item);
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+        
+        // Update display
+        updateCounts();
+        
+        // Show feedback
+        btn.textContent = '✓ Added!';
+        btn.style.background = '#28a745';
+        setTimeout(() => {
+          btn.textContent = '🛒 Add to Cart';
+          btn.style.background = '';
+        }, 1000);
       });
     });
 
     document.querySelectorAll('.wishlist-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        wishCount++;
-        wishCountEl.setAttribute('value', wishCount);
-        wishCountEl.textContent = wishCount;
+      btn.addEventListener('click', () => {
+        // Get product details from the card
+        const card = btn.closest('.product-card');
+        const name = card.querySelector('h3').textContent;
+        const price = card.querySelector('.price').textContent.replace('₹', '');
+        const image = card.querySelector('img').src.split('/').pop(); // Get filename
+        
+        // Create item object
+        const item = {
+          name: name,
+          price: price,
+          image: `images/${image}`
+        };
+        
+        // Add to wishlist
+        wishlistItems.push(item);
+        localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+        
+        // Update display
+        updateCounts();
+        
+        // Show feedback
+        btn.textContent = '❤️ Added!';
+        btn.style.background = '#dc3545';
+        setTimeout(() => {
+          btn.textContent = '❤️ Wishlist';
+          btn.style.background = '';
+        }, 1000);
       });
     });
   </script>

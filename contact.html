@@ -3,117 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact Us - GoldAura</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #fff8e7, #f9e4c8); /* soft pastel gold gradient */
-            color: #333;
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(120deg, #fff8e7 0%, #f9e4c8 100%);
+        color: #333;
+      }
+      .contact-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 10px;
+      }
+      .contact-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+        padding: 40px 30px;
+        max-width: 420px;
+        width: 100%;
+        text-align: center;
+      }
+      .contact-card h2 {
+        color: goldenrod;
+        margin-bottom: 10px;
+        font-size: 2rem;
+      }
+      .contact-card p {
+        color: #666;
+        margin-bottom: 24px;
+      }
+      .contact-card .contact-info {
+        margin-bottom: 24px;
+      }
+      .contact-card .contact-info i {
+        color: #b89d00;
+        margin-right: 8px;
+      }
+      .contact-card form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .contact-card input,
+      .contact-card textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 1rem;
+        resize: none;
+      }
+      .contact-card button {
+        padding: 12px;
+        background: goldenrod;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .contact-card button:hover {
+        background: #b89d00;
+      }
+      @media (max-width: 600px) {
+        .contact-card {
+          padding: 20px 6px;
         }
-
-        header {
-            background: #fff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            color: goldenrod;
-            margin: 0;
-        }
-
-        nav {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #b89d00;
-        }
-
-        .contact {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
-        .contact p {
-            font-size: 1.1rem;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        form {
-            background: #fff;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-
-        button {
-            padding: 12px;
-            background-color: #f4c430;
-            color: white;
-            border: none;
-            font-size: 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background-color: #daa520;
-        }
-
-        footer {
-            background: #fff;
-            padding: 15px;
-            text-align: center;
-            color: #888;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            form {
-                padding: 20px;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
+      }
     </style>
 </head>
 <body>
@@ -126,22 +88,34 @@
             <a href="products.html">Products</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="#">Login</a>
+            <a href="auth.html">Sign In</a>
+            <a href="account.html">My Account</a>
+            <a href="cart.html" class="icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cartCount" class="badge" value="0">0</span>
+            </a>
+            <a href="wishlist.html" class="icon">
+              <i class="fas fa-heart"></i>
+              <span id="wishCount" class="badge" value="0">0</span>
+            </a>
         </nav>
     </header>
-
-    <!-- Contact Section -->
-    <section class="contact">
+    <div class="contact-container">
+      <div class="contact-card">
         <h2>Contact Us</h2>
-        <p>If you have any questions, feel free to reach out!</p>
+        <p>We'd love to hear from you! Fill out the form below or reach us directly.</p>
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> support@goldaura.com</p>
+          <p><i class="fas fa-phone"></i> 8341785897</p>
+        </div>
         <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
         </form>
-    </section>
-
+      </div>
+    </div>
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 GoldAura. All rights reserved.</p>

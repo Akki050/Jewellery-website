@@ -2,105 +2,221 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - GoldAura</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(to right, #fffaf0, #f0e6d2); /* soft golden glow */
-            color: #333;
-        }
-
-        header {
-            background: #fff;
-            padding: 15px 30px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        header h1 {
-            font-size: 1.8rem;
-            color: goldenrod;
-        }
-
-        nav a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            color: #b89d00;
-        }
-
-        .about {
+        /* About Page Specific Styles */
+        .about-hero {
+            background: linear-gradient(135deg, #bf9b30 0%, #a67c00 100%);
+            color: white;
             text-align: center;
-            padding: 60px 20px 20px;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .about h2 {
-            font-size: 2.5rem;
-            color: #444;
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
         }
 
-        .about p {
-            font-size: 1.2rem;
-            max-width: 700px;
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
             line-height: 1.6;
         }
 
-        .info-cards {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 40px 20px;
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
         }
 
-        .card {
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            padding: 30px 20px;
-            max-width: 300px;
-            text-align: center;
-            transition: transform 0.3s ease;
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .story-text h2 {
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 30px;
+            font-weight: 700;
         }
 
-        .card h3 {
-            font-size: 1.4rem;
-            color: goldenrod;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            font-size: 1rem;
-            line-height: 1.5;
+        .story-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
             color: #555;
+            margin-bottom: 20px;
         }
 
-        footer {
-            background: #fff;
-            padding: 15px;
+        .story-image {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
-            color: #888;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .story-image i {
+            font-size: 8rem;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        .values-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .values-section h2 {
+            font-size: 2.5rem;
+            color: var(--gold-accent);
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
             margin-top: 40px;
         }
 
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: var(--gold-accent);
+        }
+
+        .value-card i {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 20px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold-accent);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .info-cards {
-                flex-direction: column;
-                align-items: center;
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+
+            .story-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .story-text h2 {
+                font-size: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero {
+                padding: 60px 15px;
+            }
+
+            .about-content {
+                padding: 40px 15px;
             }
         }
     </style>
@@ -115,35 +231,126 @@
             <a href="products.html">Products</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
-            <a href="#">Login</a>
+            <a href="auth.html">Sign In</a>
+            <a href="account.html">My Account</a>
+            <a href="cart.html" class="icon">
+              <i class="fas fa-shopping-cart"></i>
+              <span id="cartCount" class="badge" value="0">0</span>
+            </a>
+            <a href="wishlist.html" class="icon">
+              <i class="fas fa-heart"></i>
+              <span id="wishCount" class="badge" value="0">0</span>
+            </a>
         </nav>
     </header>
 
-    <!-- About Section -->
-    <section class="about">
-        <h2>About Us</h2>
-        <p>GoldAura is a trusted brand offering high-quality, handcrafted jewellery to make every moment special.</p>
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <h1>Our Story</h1>
+        <p>Discover the journey of passion, craftsmanship, and elegance that defines GoldAura's commitment to creating timeless jewellery pieces.</p>
     </section>
 
-    <!-- Mission, Vision, Values -->
-    <section class="info-cards">
-        <div class="card">
-            <h3>Our Mission</h3>
-            <p>To craft timeless jewellery that brings joy and elegance to every customer.</p>
-        </div>
-        <div class="card">
-            <h3>Our Vision</h3>
-            <p>To be the leading jewellery brand known for beauty, trust, and innovation.</p>
-        </div>
-        <div class="card">
-            <h3>Our Values</h3>
-            <p>Quality, Honesty, and Customer Satisfaction are at the heart of everything we do.</p>
-        </div>
-    </section>
+    <!-- Main Content -->
+    <div class="about-content">
+        <!-- Story Section -->
+        <section class="story-section">
+            <div class="story-text">
+                <h2>Where Tradition Meets Innovation</h2>
+                <p>Founded with a vision to bring the finest jewellery to discerning customers, GoldAura has been at the forefront of the jewellery industry for over two decades. Our journey began with a simple belief: that every piece of jewellery should tell a story.</p>
+                <p>We combine traditional craftsmanship with modern technology to create pieces that are not just beautiful, but also meaningful. Our artisans, with their years of experience and dedication, bring each design to life with precision and care.</p>
+                <p>From the selection of the finest materials to the final polish, every step in our process is carefully monitored to ensure the highest quality standards. We believe that jewellery is not just an accessory, but a reflection of one's personality and style.</p>
+            </div>
+            <div class="story-image">
+                <i class="fas fa-gem"></i>
+                <h3>Handcrafted Excellence</h3>
+                <p>Every piece tells a unique story</p>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-award"></i>
+                    <h3>Quality</h3>
+                    <p>We never compromise on quality. Every piece undergoes rigorous quality checks to ensure it meets our high standards and exceeds customer expectations.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Passion</h3>
+                    <p>Our passion for jewellery drives everything we do. We pour our heart into every design, making sure each piece is crafted with love and attention to detail.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Trust</h3>
+                    <p>Trust is the foundation of our relationships. We build lasting connections with our customers through transparency, honesty, and exceptional service.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Innovation</h3>
+                    <p>We constantly innovate in design and technology to bring you the latest trends while maintaining the timeless elegance that defines GoldAura.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community</h3>
+                    <p>We believe in giving back to the community that has supported us. We actively participate in social initiatives and support local artisans.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>We are committed to sustainable practices, ensuring that our beautiful jewellery doesn't come at the cost of our planet's future.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <h2>GoldAura by the Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Years of Excellence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Happy Customers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Unique Designs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Quality Assured</div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 GoldAura. All rights reserved.</p>
+    <footer class="modern-footer">
+        <div class="footer-brand">
+            <h3>GoldAura</h3>
+            <p>Elegance. Tradition. You.</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="auth.html">Sign In</a>
+        </div>
+        <div class="footer-social">
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2025 GoldAura. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>

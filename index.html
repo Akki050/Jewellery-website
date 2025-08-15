@@ -5,10 +5,10 @@
   <title>GoldAura Jewellery</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
-
   <style>
+    /* Only keep minimal centering or background for .hero if needed */
     .hero {
-      background-image: url('images/imageeee.webp'); /* Replace this with your actual image path */
+      background-image: url('images/imageeee.webp');
       background-size: cover;
       background-position: center;
       padding: 80px 20px;
@@ -16,16 +16,14 @@
       text-align: center;
       position: relative;
     }
-
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+      background: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
-
     .hero h2,
     .hero p,
     .hero a {
@@ -44,9 +42,8 @@
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="signup.html">Signup</a>
-      <a href="login.html">Login</a>
-      <a href="myaccount.html">My Account</a>
+      <a href="auth.html">Sign In</a>
+      <a href="account.html">My Account</a>
       <a href="cart.html" class="icon">
         <i class="fas fa-shopping-cart"></i>
         <span id="cartCount" class="badge" value="0">0</span>
@@ -74,33 +71,39 @@
         <img src="images/diamond-ring.jpg" alt="Diamond Ring">
         <h3>Diamond Ring</h3>
         <p class="price">&#8377;25,000</p>
-        <button class="btn cart-btn" 
-                data-name="Diamond Ring" 
-                data-price="200000" 
-                data-image="images/diamond-ring.jpg">🛒 Add to Cart</button>
-        <button class="btn wishlist-btn">❤️ Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn" 
+                  data-name="Diamond Ring" 
+                  data-price="200000" 
+                  data-image="images/diamond-ring.jpg">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
       <div class="product-card">
         <img src="images/bangles.jpeg" alt="Golden Bangles">
         <h3>Golden Bangles</h3>
         <p class="price">&#8377;108,000</p>
-        <button class="btn cart-btn" 
-                data-name="Golden Bangles" 
-                data-price="18000" 
-                data-image="images/bangles.jpeg">🛒 Add to Cart</button>
-        <button class="btn wishlist-btn">❤️ Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn" 
+                  data-name="Golden Bangles" 
+                  data-price="18000" 
+                  data-image="images/bangles.jpeg">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
       <div class="product-card">
         <img src="images/Chocker_necklace.jpg" alt="Chocker Necklace">
         <h3>Chocker Necklace</h3>
         <p class="price">&#8377;70,500</p>
-        <button class="btn cart-btn" 
-                data-name="Chocker Necklace" 
-                data-price="7500" 
-                data-image="images/Chocker_necklace.jpg">🛒 Add to Cart</button>
-        <button class="btn wishlist-btn">❤️ Wishlist</button>
+        <div class="card-actions">
+          <button class="btn cart-btn" 
+                  data-name="Chocker Necklace" 
+                  data-price="7500" 
+                  data-image="images/Chocker_necklace.jpg">🛒 Add to Cart</button>
+          <button class="btn wishlist-btn">❤️ Wishlist</button>
+        </div>
       </div>
 
     </div>
@@ -113,9 +116,34 @@
     <a href="about.html" class="btn">Learn More</a>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Akshitha Vogue. All rights reserved.</p>
+  <!-- Footer CTA Section -->
+  <section class="cta-section">
+    <h2>Ready to Shine?</h2>
+    <p>Join GoldAura for exclusive offers and the latest in elegant jewellery.</p>
+            <a href="auth.html" class="btn cta-btn">Sign Up Now</a>
+  </section>
+
+  <!-- Modern Footer -->
+  <footer class="modern-footer">
+    <div class="footer-brand">
+      <h3>GoldAura</h3>
+      <p>Elegance. Tradition. You.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="auth.html">Sign In</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2025 GoldAura. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- JS: Handle Cart and Wishlist Count -->
@@ -123,30 +151,71 @@
     const cartCountEl = document.getElementById('cartCount');
     const wishCountEl = document.getElementById('wishCount');
 
-    let cartCount = 0;
-    let wishCount = 0;
+    // Load existing counts from localStorage
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let wishlistItems = JSON.parse(localStorage.getItem('wishlist')) || [];
+    
+    // Function to update display counts
+    function updateCounts() {
+      cartCountEl.textContent = cartItems.length;
+      wishCountEl.textContent = wishlistItems.length;
+    }
+    
+    // Update display counts on page load
+    updateCounts();
 
     document.querySelectorAll('.cart-btn').forEach(button => {
       button.addEventListener('click', () => {
-        cartCount++;
-        cartCountEl.textContent = cartCount;
-
         const item = {
           name: button.getAttribute('data-name'),
           price: button.getAttribute('data-price'),
           image: button.getAttribute('data-image')
         };
 
-        let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         cartItems.push(item);
         localStorage.setItem('cart', JSON.stringify(cartItems));
+        
+        // Update display
+        updateCounts();
+        
+        // Show feedback
+        button.textContent = '✓ Added!';
+        button.style.background = '#28a745';
+        setTimeout(() => {
+          button.textContent = '🛒 Add to Cart';
+          button.style.background = '';
+        }, 1000);
       });
     });
 
     document.querySelectorAll('.wishlist-btn').forEach(button => {
       button.addEventListener('click', () => {
-        wishCount++;
-        wishCountEl.textContent = wishCount;
+        // Get product details from the card
+        const card = button.closest('.product-card');
+        const name = card.querySelector('h3').textContent;
+        const price = card.querySelector('.price').textContent.replace('₹', '');
+        const image = card.querySelector('img').src.split('/').pop(); // Get filename
+        
+        // Create item object
+        const item = {
+          name: name,
+          price: price,
+          image: `images/${image}`
+        };
+        
+        wishlistItems.push(item);
+        localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+        
+        // Update display
+        updateCounts();
+        
+        // Show feedback
+        button.textContent = '❤️ Added!';
+        button.style.background = '#dc3545';
+        setTimeout(() => {
+          button.textContent = '❤️ Wishlist';
+          button.style.background = '';
+        }, 1000);
       });
     });
   </script>
